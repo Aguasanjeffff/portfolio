@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import myPhoto from "../assets/my-photo.png";
 
+// ✅ Move roles array outside component para stable lang siya
+const roles = ["Front-End Developer", "UI/UX Designer"];
+
 const Home = () => {
-  const roles = ["Front-End Developer", "UI/UX Designer"];
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -29,7 +31,7 @@ const Home = () => {
     }, typingSpeed);
 
     return () => clearTimeout(typingEffect);
-  }, [charIndex, isDeleting, roles, roleIndex]);
+  }, [charIndex, isDeleting, roleIndex]); // ✅ removed "roles" from dependencies
 
   return (
     <section className="home-section">
@@ -39,9 +41,7 @@ const Home = () => {
         <h1 className="intro-name">
           I'm <span className="highlight-name">Jeffrey Aguasan</span>
         </h1>
-        <h2 className="intro-role">
-          A {text}
-        </h2>
+        <h2 className="intro-role">A {text}</h2>
         <p className="intro-quote">
           "Design and development inspire me to create systems that truly connect with users."
         </p>
@@ -52,7 +52,7 @@ const Home = () => {
           <p>📩 aguasanjeffrey29@gmail.com</p>
         </div>
 
-        <br></br>
+        <br />
 
         <a href="/resume.pdf" download="Jeffrey_Aguasan_Resume.pdf">
           <button className="btn-resume">Download CV</button>
@@ -70,6 +70,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
