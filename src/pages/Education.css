@@ -1,0 +1,118 @@
+.education {
+  background-color: #091b2d;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  cursor: default;
+}
+
+.education .title {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.education .subtitle {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+  color: #d1d1d1;
+}
+
+.schools {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.collegeschool,
+.seniorhighschool,
+.juniorhighschool,
+.elementaryschool {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px 30px;
+  width: 100%;
+  max-width: 1000px;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+.collegeschool:hover,
+.seniorhighschool:hover,
+.juniorhighschool:hover,
+.elementaryschool:hover {
+  transform: translateY(-5px);
+}
+
+/* Text Content */
+.content {
+  text-align: left;
+  max-width: 70%;
+}
+
+.content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #00bfff;
+}
+
+.content p {
+  margin: 3px 0;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Logo */
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .collegeschool,
+  .seniorhighschool,
+  .juniorhighschool,
+  .elementaryschool {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px; /* hindi sagad sa gilid */
+    margin: 0 15px; /* para may space sa gilid */
+    transition: transform 0.3s ease; /* retain hover sa mobile */
+  }
+
+  .content {
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+}
